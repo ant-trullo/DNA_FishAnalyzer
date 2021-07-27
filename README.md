@@ -3,14 +3,14 @@ This software is written in Python™ 3.8.
 
 - Packages needed for DNA_FishAnalyzer_v0.0 to work:
 
-	numpy         1.20.3
-	pyqtgraph     0.11.1
-	skimage       0.18.1
-	sklearn       0.22.1
-	PyQt5         5.13.1
-	xlsxwriter    1.4.3
-	czifile       2019.7.2
-	cython        0.29.23
+	numpy         1.20.3;
+	pyqtgraph     0.11.1;
+	skimage       0.18.1;
+	sklearn       0.22.1;
+	PyQt5         5.13.1;
+	xlsxwriter    1.4.3;
+	czifile       2019.7.2;
+	cython        0.29.23.
 
 The number refers to the version we have used. DNA_FishAnalyzer_v0.0 can work anyway 
 with newer version of the same packages, unless there are changes in syntax.
