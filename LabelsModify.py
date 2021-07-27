@@ -51,22 +51,3 @@ class LabelsModify:
             labels_fin  =  self.labels_img * (1 - labels_mask) + idxs[0] * labels_mask                                  # assigns one single label to them
 
         self.labels_fin     =  labels_fin
-
-
-
-
-class LabelsModifyVoronoi:
-    """Simplified version to perform Voronoi segmentation"""
-    def __init__(self, labels_img, end_pts, xlen, ylen):
-
-        pts_coords  =  np.asarray(BresenhamLine.BresenhamLine(end_pts[0, 0], end_pts[0, 1], end_pts[1, 0], end_pts[1, 1]).coords)     # coordinate of the points overlapped by the ROI segment
-        pts_coords  =  pts_coords[pts_coords[:, 0] >= 0]                                                                              # remove coordinate outside the image (negative or exceeding image size)
-        pts_coords  =  pts_coords[pts_coords[:, 1] >= 0]                                                                              # to avoid problems due to circular coordinates (mtx[5, -3] and similar)
-        pts_coords  =  pts_coords[pts_coords[:, 0] <= xlen]
-        pts_coords  =  pts_coords[pts_coords[:, 1] <= ylen]
-
-        labels_img[pts_coords[:, 0], pts_coords[:, 1]]  =  0                                                                                  # the segment is going to be 0 to implement the cut
-
-            
-        self.labels_fin    =  labels_img
-
